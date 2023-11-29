@@ -1,0 +1,43 @@
+<div class="converter-container">
+
+    <h2>Currency Converter</h2>
+
+    <div class="currency-wrapper">
+
+        <mat-form-field>
+            <input matInput type="number" placeholder="Enter Amount" [(ngModel)]="amount" (input)="convert()" required>
+          </mat-form-field>
+        
+          <mat-form-field>
+            <mat-label>From Currency</mat-label>
+            <mat-select [(ngModel)]="baseCurrency" (ngModelChange)="convert()">
+              <mat-option *ngFor="let currency of currencies" [value]="currency.code">
+                <img [src]="currency.flag" alt="{{currency.code}}" class="flag-icon">
+                {{ currency.code }} - {{ currency.name.name_plural }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <img class="arrow-right" src="/assets/images/arrow-right.png" width="32px" height="32px">
+        
+          <mat-form-field>
+            <mat-label>To Currency</mat-label>
+            <mat-select [(ngModel)]="targetCurrency" (ngModelChange)="convert()">
+              <mat-option *ngFor="let currency of currencies" [value]="currency.code">
+                <img [src]="currency.flag" alt="{{currency.code}}" class="flag-icon">
+                {{ currency.code }} - {{ currency.name.name_plural }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        
+          <!-- <button mat-raised-button color="primary" (click)="convert()">Convert</button> -->
+
+    </div>
+
+    
+  
+    <div class="result" *ngIf="convertedValue !== null">
+        <span>{{ amount }} {{ baseCurrency }} = <h2> {{ convertedValue.toFixed(6) }} {{ targetCurrency }} </h2> </span> 
+    </div>
+  </div>
+  

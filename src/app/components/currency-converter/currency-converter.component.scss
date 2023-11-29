@@ -1,0 +1,125 @@
+/* // Main */
+::selection {
+    background: #ffffff;   
+    color: #ffffff;
+}
+::-moz-selection {
+    background: #ffffff;    
+    color: #ffffff;
+}
+
+body {
+    background: #ffffff; 
+    padding: 0;
+    margin: 0 auto;
+    font-family: 'Yantramanav', Arial, sans-serif;
+    color: #00000d; 
+}
+
+article,
+aside,
+details,
+figcaption,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+
+a {
+    color: #001aff;
+    text-decoration: none;
+}
+
+menu,
+ol,
+ul {
+    padding: 0 !important;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+section {
+    position: relative;
+}
+
+/* // Typography */
+h1, h2, h3, p {
+    margin: 0;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+}
+
+.converter-container{
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    h2{
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
+    .currency-wrapper{
+        display: flex;
+        justify-content: space-between;
+        .arrow-right,
+        button{
+            margin-top: 10px;
+        }
+    }
+    .result{
+        margin: 15px 0;
+    }
+}
+
+@media only screen and (max-width: 640px){
+
+    .converter-container{
+        .currency-wrapper{
+            display: block;
+            .mat-mdc-form-field{
+                width: 100%;
+            }
+            button{
+                display: block;
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px){
+
+    .converter-container{
+        border-radius: 8px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(35, 55, 80, 0.3) 0px 6px 12px;
+        margin-top: 35px;
+        padding-bottom: 50px;
+    }
+}
